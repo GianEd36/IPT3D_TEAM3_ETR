@@ -1,0 +1,13 @@
+﻿@model Product
+
+<h2>@Model.Name</h2>
+<img src="@Model.ImageUrl" alt="@Model.Name" />
+<p>@Model.Description</p>
+<p>Price: @Model.Price.ToString("C")</p>
+
+<form method="post" action="/Cart/AddToCart">
+    <input type="hidden" name="productId" value="@Model.Id" />
+    <button type="submit">Add to Cart</button>
+</form>
+
+<a href="/Product">Back to Products</a>
